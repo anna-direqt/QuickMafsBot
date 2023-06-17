@@ -1,6 +1,7 @@
 import { assert } from "chai";
 import { describe } from "mocha";
-import { Fraction, Expression } from "./quick-mafs";
+import { Expression } from "./quick-mafs"; // CHANGE THIS BACK
+import { Fraction } from "./fraction";
 
 describe("Simplify Tests", () => {
   it("should simplify 27/35 as 27/35", () => {
@@ -129,6 +130,18 @@ describe("Equation Solving Tests", () => {
   it("should compute (12/7 + 2/3) / (1/2 * 9/4) = 400/189", () => {
     const expected = "400/189";
     const raw = "(12/7 + 2/3) / (1/2 * 9/4)";
+    const expression = new Expression(raw);
+    assert.equal(expression.evaluate().toString(), expected);
+  });
+  it("should compute 2+2+1/3 = 13/3", () => {
+    const expected = "13/3";
+    const raw = "2+2+1/3";
+    const expression = new Expression(raw);
+    assert.equal(expression.evaluate().toString(), expected);
+  });
+  it("should compute 3(4(5+2)) = 84", () => {
+    const expected = "84";
+    const raw = "3(4(5+2))";
     const expression = new Expression(raw);
     assert.equal(expression.evaluate().toString(), expected);
   });

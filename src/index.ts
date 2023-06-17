@@ -6,7 +6,7 @@
  */
 import express, { Request, Response } from "express";
 import { DireqtApi } from "direqt";
-import { Expression } from "./quick-mafs";
+import { Expression } from "./quick-mafs"; // CHANGE THIS BACK
 
 const direqt = new DireqtApi({
   accessToken:
@@ -21,7 +21,7 @@ const rawBodyExtractor = (req: Request, res: Response, buf: Buffer) => {
 };
 
 const startMsg =
-  "Welcome to QuickMafs! \n*  Give me an expression of fractions [integer]/[integer], integers, and operators (*, /, +, -) and I'll calculate it.\n*  Make sure that you have spaces between your terms and operators!\nHappy mathing :)";
+  "Welcome to QuickMafs! \n*  Give me an expression of fractions [integer]/[integer], integers, and operators (*, /, +, -) and I'll calculate it.\n*  If you want to perform division, please put a space before and after /. This differentiates it from a fraction slash. \nHappy mathing :)";
 
 app.use(
   "/calc",
