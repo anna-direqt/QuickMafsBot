@@ -1,9 +1,3 @@
-/**
- * Simple Direqt echo bot.
- *
- * This sample demonstrates how to connect your chatbot to Direqt to send and
- * receive messages.
- */
 import express, { Request, Response } from "express";
 import { DireqtApi } from "direqt";
 import { Expression } from "./quick-mafs"; // CHANGE THIS BACK
